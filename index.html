@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey, Rose This Is For You</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            text-align: center;
+            color: white;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 3.5em;
+            text-shadow: 3px 3px 8px black;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.8em;
+            margin: 10px 0;
+            font-style: italic;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .gift-box {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            animation: bounce 1.5s infinite;
+        }
+        .gift-box::before {
+            content: '\1F381';
+            font-size: 50px;
+            position: absolute;
+        }
+        .rose {
+            display: none;
+            font-size: 100px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .message {
+            display: none;
+            font-size: 1.5em;
+            color: white;
+            margin-top: 15px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hey, My Love, This Is For You</h1>
+    <p>Because you deserve all the love and beauty in the world. 🌹</p>
+    <audio controls autoplay loop>
+        <source src="Adiye-MassTamilan.fm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="gift-box" onclick="showRose()"></div>
+    <div class="rose" id="rose">🌹</div>
+    <div class="message" id="message">Forever yours, wrapped in love. ❤️</div>
+    <script>
+        function showRose() {
+            document.querySelector('.gift-box').style.display = 'none';
+            document.getElementById('rose').style.display = 'block';
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
